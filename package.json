@@ -1,0 +1,11 @@
+{
+  "name": "cpa.helper",
+  "version": "1.0.0",
+  "description": "Helper to CPA exam",
+  "main": "index.js",
+  "scripts": {
+    "test": "run test"
+  },
+  "author": "",
+  "license": "ISC"
+}
