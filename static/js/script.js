@@ -16,10 +16,12 @@ function fetchJson() {
 }
 
 function popularQuestoes(jsonObject) {
-  var modulos = jsonObject.modulos;
-  modulos.foreach((modulo, index) => {
-    console.log(modulo, index)
-  })
-}
+  const modulos = jsonObject.modulos;
+  modulos.forEach((obj, index) => {
+    obj.modulo.forEach((objQuestao, index) => {
+      console.log(objQuestao.questao.enunciado)
+    });
+  });
+};
 
 fetchJson();

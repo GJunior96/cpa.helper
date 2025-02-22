@@ -1,8 +1,10 @@
 process.title = 'cpa.helper';
-var args = process.argv,
-    port = args[2] || 7070,
-    server = require('./server');
 
-server.listen(port, function() {
-    console.log(`Server started at http://localhost:${port}`);
+const args = process.argv,
+      port = args[2] || 8000,
+      host = "localhost",
+      server = require('./server');
+
+server.listen(port, () => {
+    console.log(`Server running at http://${host}:${port}`);
 });

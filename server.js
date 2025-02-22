@@ -1,37 +1,35 @@
-var http = require('http'),
-    config = require('./config'),
-    fileHandler = require('./filehandler'),
-    parse = require('url').parse,
-    types = config.types,
-    rootFolder = config.rootFolder,
-    defaultIndex = config.defaultIndex,
-    server;
+const http = require('http'),
+      config = require('./config'),
+      parse = require('url').parse,
+      fileHandler = require('./fileHandler'),
+      rootFolder = config.rootFolder,
+      types = config.types,
+      defaultIndex = config.defaultIndex;
 
-    module.exports = server = http.createServer();
+var server;
 
-    server.on('request', onRequest);
+module.exports = server = http.createServer();
 
-    function onRequest(req, res) {
-    var filename = parse(req.url).pathname,
+server.on('request', onRequest);
+
+function onRequest(req, res) {
+    let filename = parse(req.url).pathname,
         fullPath,
         extension;
-
-    if(filename === '/') {
-        filename = defaultIndex;
-    }
-
+    
+    if(filename === '/') filename = defaultIndex;
+    
     fullPath = rootFolder + filename;
     extension = filename.substr(filename.lastIndexOf('.') + 1);
-
-    fileHandler(fullPath, function(data) {
+    
+    fileHandler(fullPath, (data) => {
         res.writeHead(200, {
             'Content-Type': types[extension] || 'text/plain',
             'Content-Length': data.length
         });
         res.end(data);
-
-        }, function(err) {
-            res.writeHead(404);
-            res.end();
-        });
-    }
+    }, (err) => {
+        res.writeHead(404);
+        res.end();
+    });
+};
