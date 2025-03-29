@@ -1,1 +1,46 @@
-body { background: blue }
+body, h1, ul, li {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+ul { list-style: none }
+
+.container {
+  display: flex;
+  align-content: center;
+  flex-direction: column-reverse;
+  background-color: #f6fbff;
+  padding: 10px;
+  justify-content: center;
+}
+
+.enunciado {
+  padding: 10px;
+  margin: 10px;
+  width: auto;
+  box-sizing: border-box;
+  display: block;
+}
+
+.alternativa {
+  background-color: #e4eaef;
+  padding: 0.625rem;
+  margin: 0.625rem;
+  width: auto;
+  border-radius: 10px;
+}
+
+.nav {
+  color: gray;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.625rem;
+}

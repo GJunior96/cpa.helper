@@ -1,7 +1,7 @@
 process.title = 'cpa.helper';
 
 const args = process.argv,
-      port = args[2] || 8000,
+      port = args[2] || 9000,
       host = "localhost",
       server = require('./server');
 

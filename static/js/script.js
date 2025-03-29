@@ -5,3 +5,5 @@ const data = await fetchJson();
 let respondidas = [];
 
 obterQuestao(data)
+
+
