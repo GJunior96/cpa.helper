@@ -10,5 +10,5 @@ export default async function fetchJson() {
     .catch(error => {
       console.error('Houve um erro com o fecth do json:', error);
     });
-  return response.modulos
+  return response.questoes
 };

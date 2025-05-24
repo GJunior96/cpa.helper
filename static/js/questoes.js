@@ -14,13 +14,24 @@ function criarElementoQuestao(obj) {
     let alternativas = embaralharArray([...obj.erradas, obj.resposta]),
         enunciado = obj.enunciado,
         resposta = obj.resposta,
-        modulo = document.querySelector("#modulo"),
+        container = document.querySelector("#container"),
+        questao = document.createElement("div"),
         divEnunciado = document.createElement("p"),
-        lista = document.querySelector("#alternativas");
+        lista = document.createElement("ul");
+    
+    questao.id = "questao";
+    questao.classList.add("card-questao");
+    
+    questao.style.opacity = "0";
+    
+    container.appendChild(questao);
+    
+    lista.id = "alternativas";
+    questao.appendChild(lista);
     
     divEnunciado.textContent = enunciado;
     divEnunciado.classList.add("enunciado");
-    modulo.appendChild(divEnunciado);
+    questao.appendChild(divEnunciado);
     
     alternativas.forEach((texto) => {
         let itemLista = document.createElement("li");
@@ -34,13 +45,12 @@ function criarElementoQuestao(obj) {
 };
 
 export default function obterQuestao(data) {
-    let moduloIndex = aleatorio(data),
-        questaoIndex = aleatorio(data[moduloIndex].modulo),
-        questao = data[moduloIndex].modulo[questaoIndex].questao;
-    
+    let questaoIndex = aleatorio(data),
+        questao = data[questaoIndex];
+  
     criarElementoQuestao(questao);
     
-    data[moduloIndex].modulo.splice(questaoIndex, 1);
+    data.splice(questaoIndex, 1);
 };
 
 
