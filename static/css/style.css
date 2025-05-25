@@ -14,7 +14,6 @@ body {
 ul { list-style: none }
 
 .card-questao {
-  max-width: 900px;
   display: flex;
   align-content: center;
   flex-direction: column-reverse;
@@ -38,6 +37,11 @@ ul { list-style: none }
   margin: 0.625rem;
   width: auto;
   border-radius: 10px;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.alternativa:hover {
+  background-color: #cfdceb;
 }
 
 .nav {
@@ -158,4 +162,21 @@ ul { list-style: none }
 
 .piscar-correta {
   animation: piscar-correta 0.5s ease-in-out 10;
+}
+
+@media (min-width: 900px) {
+  .card-questao {
+    width: 900px;
+    align-self: center;
+  }
+
+  .resultado {
+    width: 900px;
+    align-self: center;
+  }
+
+  .nav {
+    max-width: 900px;
+    margin: auto;
+  }
 }
