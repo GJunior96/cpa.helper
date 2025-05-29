@@ -1,5 +1,5 @@
 export default async function fetchJson() {
-  const response = await fetch('questoes.json')
+  const response = await fetch('./questoes.json')
     .then(response => {
       if (!response.ok)
       {
