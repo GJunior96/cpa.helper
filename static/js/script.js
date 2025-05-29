@@ -2,7 +2,7 @@ import fetchJson from "./questoesFetch.js";
 import obterQuestao from "./questoes.js";
 import { transicaoQuestao, transicaoResultado } from "./transicao.js";
 import validarResposta from "./validacaoResposta.js"
-console.log("teste")
+
 const data = await fetchJson(),
       quantidadeQuestoes = data.length;
 let respondidas = [];
