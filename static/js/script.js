@@ -1,7 +1,7 @@
 import fetchJson from "./questoesFetch.js";
 import obterQuestao from "./questoes.js";
 import { transicaoQuestao, transicaoResultado } from "./transicao.js";
-import validarResposta from "./validacaoResposta.js"
+import validarResposta from "./validaResposta.js"
 
 const data = await fetchJson(),
       quantidadeQuestoes = data.length;
